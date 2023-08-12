@@ -1,3 +1,7 @@
+body {
+    background-color: #eeecec;
+}
+
 h1 {
     font-family: "Frank Ruhl Libre", sans-serif;
 
@@ -7,8 +11,9 @@ h1 {
 .list-group-item {
     font-family: "Noto Sans Hebrew", sans-serif;
     font-size: 1.2em;
-    background-color: #fbaf1c;
+    background: linear-gradient(to bottom, #fbaf1c, #f9f9f9);
     text-align: right;
+    margin-bottom: 1em;
 }
 .hero {
     background-image: url("./assetes/images/dudi-hero4.png"); /* Add your hero image */
@@ -17,6 +22,15 @@ h1 {
     padding: 150px 0;
     margin-bottom: 50px;
     background-color: rgba(0, 0, 0, 0.7); /* Add semi-transparent black background */
+}
+
+@media (min-width: 1440px) {
+    .hero {
+        /* padding: 250px 0; */
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 }
 
 .iconImage img {
