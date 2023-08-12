@@ -1,0 +1,65 @@
+h1 {
+    font-family: "Frank Ruhl Libre", sans-serif;
+
+    font-size: 2.3em;
+}
+
+.list-group-item {
+    font-family: "Noto Sans Hebrew", sans-serif;
+    font-size: 1.2em;
+    background-color: #fbaf1c;
+    text-align: right;
+}
+.hero {
+    background-image: url("./assetes/images/dudi-hero4.png"); /* Add your hero image */
+    background-size: cover;
+    color: #fff;
+    padding: 150px 0;
+    margin-bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.7); /* Add semi-transparent black background */
+}
+
+.iconImage img {
+    width: 4em;
+    height: 4em;
+    border-radius: 15%;
+    margin: 0 auto;
+    display: block;
+}
+.navbar {
+    background-color: #434343;
+}
+.navbar-brand {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/* Using Noto Sans Hebrew for paragraphs */
+p {
+    font-family: "Noto Sans Hebrew", sans-serif;
+}
+
+/* Or using Rubik for paragraphs */
+/* p {
+    font-family: "Rubik", sans-serif;
+} */
+
+.whatsapp-button {
+    font-size: 1.2rem; /* Adjust the font size */
+    padding: 10px 25px; /* Increase padding for width */
+    background-color: #25d366; /* WhatsApp color */
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.whatsapp-button i {
+    margin-right: 10px;
+}
+
+/* Hover effect to darken the button color slightly */
+.whatsapp-button:hover {
+    background-color: #20b85c;
+}
