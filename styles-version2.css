@@ -20,10 +20,13 @@ body {
     background-color: #0056b3; /* Darker blue on hover */
 }
 
+.container.text-center {
+    margin-top: 10%; /* Adjust this value to position the h1 as desired */
+}
 h1 {
     font-family: "Frank Ruhl Libre", sans-serif;
 
-    font-size: 2.3em;
+    font-size: 2em;
 }
 
 i {
@@ -44,6 +47,11 @@ i {
     padding: 150px 0;
     margin-bottom: 10px;
     background-color: rgba(0, 0, 0, 0.7); /* Add semi-transparent black background */
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Align to the top */
+    padding-top: 5%; /* Adjust the top padding to position h1 */
+    height: 300px;
 }
 
 @media (min-width: 1440px) {
