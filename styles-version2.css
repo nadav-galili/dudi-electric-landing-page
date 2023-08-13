@@ -2,32 +2,47 @@ body {
     background-color: #eeecec;
 }
 
+.call-now-button {
+    font-size: 1.2rem;
+    padding: 10px 35px; /* Increase padding for width */
+    background-color: #007bff; /* Blue color */
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.call-now-button i {
+    margin-right: 10px;
+}
+
+.call-now-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
 h1 {
     font-family: "Frank Ruhl Libre", sans-serif;
 
     font-size: 2.3em;
 }
 
+i {
+    margin-left: 1em;
+}
+
 .list-group-item {
     font-family: "Noto Sans Hebrew", sans-serif;
-    font-size: 1.2em;
-    background: linear-gradient(to bottom, #fbaf1c, #f9f9f9);
+    font-size: 0.8em;
     text-align: right;
-    margin-bottom: 1em;
+    background-color: #fbaf1c;
 }
-.list-group-item-version2 {
-    font-family: "Noto Sans Hebrew", sans-serif;
-    font-size: 1.2em;
-    background: linear-gradient(to bottom, #fbaf1c, #f9f9f9);
-    text-align: right;
-    margin-bottom: 1em;
-}
+
 .hero {
     background-image: url("./assetes/images/dudi-hero4.png"); /* Add your hero image */
     background-size: cover;
     color: #fff;
     padding: 150px 0;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     background-color: rgba(0, 0, 0, 0.7); /* Add semi-transparent black background */
 }
 
