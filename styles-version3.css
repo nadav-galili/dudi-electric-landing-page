@@ -1,0 +1,111 @@
+body {
+    background-color: #eeecec;
+    font-family: "NarkisBlock" !important;
+}
+
+.call-now-button {
+    font-size: 1.2rem;
+    padding: 10px 35px; /* Increase padding for width */
+    background-color: #007bff; /* Blue color */
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.call-now-button i {
+    margin-right: 10px;
+}
+
+.call-now-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.container.text-center {
+    margin-top: 10%; /* Adjust this value to position the h1 as desired */
+}
+h1 {
+    font-size: 2.4em;
+    font-weight: bold;
+}
+
+i {
+    margin-left: 1em;
+}
+
+.list-group-item {
+    /* font-family: "Noto Sans Hebrew", sans-serif; */
+    font-size: 0.8em;
+    text-align: right;
+    background-color: #fbaf1c;
+}
+
+.hero {
+    background-image: url("./assetes/images/Even_Darker_Hero_Image.jpeg"); /* Add your hero image */
+    background-size: cover;
+    color: #fff;
+    padding: 150px 0;
+    margin-bottom: 10px;
+    /* background-color: rgba(0, 0, 0, 0.5);d semi-transparent black background */
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Align to the top */
+    padding-top: 5%; /* Adjust the top padding to position h1 */
+
+    height: 300px;
+}
+
+@media (min-width: 1440px) {
+    .hero {
+        padding-bottom: 350px;
+    }
+    .buttons {
+        margin: auto;
+        width: 50%;
+    }
+}
+
+.iconImage img {
+    width: 4em;
+    height: 4em;
+    border-radius: 15%;
+    margin: 0 auto;
+    display: block;
+}
+.navbar {
+    background-color: #434343;
+}
+.navbar-brand {
+    /* font-family: "Roboto", sans-serif; */
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/* Using Noto Sans Hebrew for paragraphs */
+/* p {
+    font-family: "Noto Sans Hebrew", sans-serif;
+} */
+
+/* Or using Rubik for paragraphs */
+/* p {
+    font-family: "Rubik", sans-serif;
+} */
+
+.whatsapp-button {
+    font-size: 1.2rem; /* Adjust the font size */
+    padding: 10px 25px; /* Increase padding for width */
+    background-color: #25d366; /* WhatsApp color */
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.whatsapp-button i {
+    margin-right: 10px;
+}
+
+/* Hover effect to darken the button color slightly */
+.whatsapp-button:hover {
+    background-color: #20b85c;
+}
