@@ -29,7 +29,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
-        <link rel="stylesheet" href="styles-version3.css" />
+        <link rel="stylesheet" href="styles-version4.css" />
         <link rel="icon" href="./assetes/images/dudi.jpg" type="image/png" />
     </head>
 
@@ -47,10 +47,16 @@
                 <h3>מבצע את כל עבודות החשמל</h3>
                 <div class="buttons d-flex justify-content-around">
                     <a href="https://wa.me/972543335316" class="whatsapp-button btn mt-3" target="_blank">
-                        <i class="fab fa-whatsapp"></i>צרו קשר
+                        <div class="buttonsImg me-2">
+                            <img src="./assetes/images/whatsappImage.jpeg" />
+                        </div>
+                        צרו קשר
                     </a>
                     <a href="tel:0543335316" class="call-now-button btn btn-primary mt-3">
-                        <i class="fas fa-phone-alt"></i>חייג/י
+                        <div class="buttonsImg me-2">
+                            <img src="./assetes/images/phoneImage.jpeg" />
+                        </div>
+                        חייג/י
                     </a>
                 </div>
             </div>
@@ -63,9 +69,7 @@
                             תשתיות חשמל לבתים, משרדים, ובתי מסחר
                             <i class="fa-solid fa-bolt"></i>
                         </li>
-                        <li class="list-group-item">
-                            אספקה של גופי תאורה, החלפה ותיקון של גופי תאורה <i class="fa-solid fa-bolt"></i>
-                        </li>
+                        <li class="list-group-item">אספקה והחלפה של גופי תאורה <i class="fa-solid fa-bolt"></i></li>
                         <li class="list-group-item">החלפת גופי חימום לדודי חשמל <i class="fa-solid fa-bolt"></i></li>
                         <li class="list-group-item">מאתר ומתקן תקלות חשמל <i class="fa-solid fa-bolt"></i></li>
                         <li class="list-group-item">הגדלה של לוחות חשמל לתלת פאזי <i class="fa-solid fa-bolt"></i></li>
@@ -90,9 +94,12 @@
                     מונע
                 </p>
             </section>
-            <section id="call-to-action-bottom" class="text-center my-2">
-                <a href="tel:0543335316" class="call-now-button btn btn-primary mt-3">
-                    <i class="fas fa-phone-alt"></i>חייג/י 054-333-5316
+            <section id="call-to-action-bottom" class="text-center my-2 d-flex justify-content-center">
+                <a href="tel:0543335316" class="full-call-now-button">
+                    <div class="fullPhone">
+                        <img src="./assetes/images/fullPhone.jpeg" />
+                        <span class="dial-text"> 054-333-5316</span>
+                    </div>
                 </a>
             </section>
         </main>
