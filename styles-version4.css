@@ -3,8 +3,8 @@ body {
     font-family: "NarkisBlock" !important;
 }
 .buttonsImg {
-    width: 2em;
-    height: 2em;
+    width: 5em;
+    height: 5em;
 }
 .buttonsImg img
 /* .fullPhone img */ {
@@ -17,16 +17,17 @@ body {
 }
 
 .fullPhone img {
-    width: 18em;
-    height: 4em;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .dial-text {
     position: absolute;
-    top: 30%;
+    top: 35%;
     left: 45%;
     /* transform: translate(-50%, -50%); */
-    font-size: 1.2em; /* adjust the font size as needed */
+    font-size: 1.8em; /* adjust the font size as needed */
     color: white; /* adjust the text color as needed */
     text-shadow: 2px 2px 4px #000000;
     /* optional: add a text shadow for better readability; */
