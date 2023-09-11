@@ -1,3 +1,71 @@
+
+<?php
+
+function old($fn){
+    return $_REQUEST[$fn] ?? '';
+  }
+
+    if(isset($_GET['status']) && $_GET['status'] == 'success'){
+        echo 
+            '<div class="alert alert-success d-flex align-items-center" role="alert">
+        <i class="fas fa-check-circle me-2"></i>
+        <div>
+            ההודעה נשלחה בהצלחה!
+            נחזור אליך בהקדם
+        </div>
+</div>';
+    }
+
+
+
+       $errors = ['name' => '',
+                  'phone'=>'',
+                  'job_description'=>'',
+                ];
+            if(isset($_POST['submit'])){
+                $name = filter_input(INPUT_POST,'name',FILTER_SANITIZE_STRING);
+                $name = trim($name);
+                $phone = filter_input(INPUT_POST,'phone',FILTER_SANITIZE_STRING);
+                $phone = trim($phone);
+                $job_description = filter_input(INPUT_POST,'job_description',FILTER_SANITIZE_STRING);
+                $job_description = trim($job_description);
+                $valid_form = true;
+                if(!$name || mb_strlen($name) < 2){
+                    $errors['name'] = '* שם חייב להכיל לפחות 2 תווים';
+                    $valid_form = false;
+                }
+                if(!$phone || preg_match('/[^0-9]/',$phone)){
+                    $errors['phone'] = '* מספר טלפון חייב להכיל ספרות בלבד';
+                    $valid_form = false;
+                }
+                if(!$job_description || mb_strlen($job_description) < 2){
+                    $errors['job_description'] = '* תיאור העבודה חייב להכיל לפחות 2 תווים ';
+                    $valid_form = false;
+                }
+
+                
+                if($valid_form){
+                    $to = "nadavg@mobile-brain.net";
+                    $subject = "הודעה מאתר דודי סעדי";
+                    $message = "שם: $name \nטלפון: $phone \nתיאור העבודה: $job_description";
+                    $headers = 'From: sender@example.com' . "\r\n" .
+                    'Reply-To: sender@example.com' . "\r\n" .
+                    'X-Mailer: PHP/' . phpversion();
+                    mail($to,$subject,$message,$headers);
+                    header('Location: index.php?status=success');
+                }else{
+                    echo '<div class="alert alert-danger d-flex align-items-center" role="alert">
+                    <i class="fas fa-exclamation-circle me-2"></i>
+                    <div>
+                        אנא תקן את השדות המסומנים באדום
+                    </div>
+                </div>';
+                }
+            }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -120,19 +188,35 @@
                 מונע
             </p>
         </section>
-        <section id="contact_form">
-            <form action="submit.php" method="post">
-                <label for="name">שם:</label>
-                <input type="text" id="name" name="name" required><br>
-
-                <label for="phone">טלפון:</label>
-                <input type="tel" id="phone" name="phone" required><br>
-
-                <label for="job_description">:</label>
-                <textarea id="job_description" name="job_description" rows="4" required></textarea><br>
-
-                <input type="submit" value="Submit">
-            </form>
+        <section id="contact_form" class="mt-4">
+        <div class="row">
+            <div class="col-8 col-md-4  mx-auto contact_form"">
+                <form action="" dir="rtl" method="POST" >
+                   <div class="form-group my-3">
+            <!-- <label for="name">שם:</label> -->
+                      <input type="name" class="form-control" id="name"  name="name" placeholder="שם" value="<?=old('name');?>">
+                      <span class="text-danger"><?=$errors['name']?></span>
+                 </div>
+          <div class="form-group my-3">
+            <!-- <label for="phone">טלפון:</label> -->
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="טלפון" value="<?=old('phone');?>">
+            <span class="text-danger"><?=$errors['phone']?></span>
+        
+        </div>
+          <div class="form-group my-3">
+    <!-- <label for="job_description">תאור העבודה:</label> -->
+    <textarea class="form-control" id="job_description" rows="5" name="job_description" placeholder="תאור העבודה">
+    <?=old('job_description');?>
+    </textarea>
+    <span class="text-danger"><?=$errors['job_description']?></span>
+       
+</div>
+        <div class="d-flex justify-content-center my-3">
+    <button type="submit" name="submit" class="btn text-white bg-black w-100">שלח</button>
+  </div>
+        </form>
+            </div>
+        </div>
         </section>
     </main>
     <footer>

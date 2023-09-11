@@ -1,3 +1,9 @@
+:root{
+    --primary-color: #fbaf1c;
+}
+
+
+
 body {
     background-color: #eeecec;
     font-family: "NarkisBlock" !important;
@@ -25,25 +31,14 @@ body {
     background-color: #fff;
 }
 
-/* .fullPhone {
-    position: relative; /* Enable absolute positioning for child elements */
-/* } */
-
-.fullPhone img {
-    display: block;
-    width: 70%; /* Set the width of the img to 80% */
-    height: 40%; /* Set the height of the img to 60% of its original height */
-    z-index: 1; /* Set the z-index of the img to 1 */
-    margin-left: auto; /* Center the image horizontally */
-    margin-right: auto; /* Center the image horizontally */
-    object-fit: contain;
-    background-color: aquamarine;
-}
 
 .container.text-center {
     margin-top: 10%; /* Adjust this value to position the h1 as desired */
 }
 
+.contact_form {
+    background-color: var(--primary-color);
+}
 .danger-img-container {
     width: 4em;
     height: 4em;
@@ -79,7 +74,7 @@ i {
 .list-group-item {
     font-size: 0.92em;
     text-align: right;
-    background-color: #fbaf1c;
+    background-color: var(--primary-color);
 }
 
 .hero {
@@ -146,7 +141,7 @@ i {
 }
 
 #notice {
-    background-color: #fbaf1c;
+    background-color: var(--primary-color);
 }
 
 .text-center {
