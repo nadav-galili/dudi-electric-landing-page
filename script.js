@@ -1,36 +1,37 @@
-// Variable to hold the last scroll position
-let lastScrollTop = 0;
+document.addEventListener("scroll", function () {
+    const stickyButtons = document.querySelector(".sticky-buttons"); // Assuming there's only one .sticky-buttons element
 
-// Function to check if an element is in the viewport
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return rect.top <= window.innerHeight && rect.bottom >= 0;
-}
+    const scrollPosition = window.scrollY;
+    const elements = document.querySelectorAll(".col-md-4.col-sm-12");
 
-// Function to handle scroll events
-function handleScroll() {
-    // Determine the current scroll direction
-    const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const isScrollingDown = currentScrollTop > lastScrollTop;
-    lastScrollTop = currentScrollTop;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
 
-    // Apply the effect only when scrolling down
-    if (isScrollingDown) {
-        const elements = document.querySelectorAll(".scroll-appear");
+    // Show the elements when scroll position is greater than 100 pixels
+    if (scrollPosition > 100) {
         elements.forEach((element, index) => {
-            // Check if the effect has already been applied
-            if (!element.classList.contains("effect-applied")) {
-                if (isInViewport(element)) {
-                    const delay = element.getAttribute("data-delay");
-                    setTimeout(() => {
-                        element.classList.add("active");
-                        element.classList.add("effect-applied"); // Mark the effect as applied
-                    }, parseFloat(delay) * 1000); // Convert delay to milliseconds
-                }
-            }
+            setTimeout(() => {
+                element.style.opacity = "1";
+            }, index * 500); // 500ms delay for each element
         });
-    }
-}
 
-// Add scroll event listener
-window.addEventListener("scroll", handleScroll);
+        // Make the buttons sticky
+        stickyButtons.style.position = "fixed";
+        stickyButtons.style.width = "100%";
+        stickyButtons.style.zIndex = "1000";
+
+        // If the user has scrolled to the bottom of the page
+        if (scrollPosition + windowHeight >= documentHeight) {
+            stickyButtons.style.bottom = "0";
+        } else {
+            stickyButtons.style.bottom = "10%";
+        }
+    } else {
+        elements.forEach((element) => {
+            element.style.opacity = "0";
+        });
+
+        // Remove the sticky position from the buttons
+        stickyButtons.style.position = "static";
+    }
+});

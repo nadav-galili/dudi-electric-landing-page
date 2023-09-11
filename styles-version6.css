@@ -1,0 +1,197 @@
+body {
+    background-color: #eeecec;
+    font-family: "NarkisBlock" !important;
+}
+
+.btn-lg {
+    height: 3em;
+}
+.buttonsImg {
+    width: 3em;
+    height: 3em;
+}
+.buttonsImg.ms-2 {
+    width: 2.9em;
+    height: 2.9em;
+}
+.buttonsImg img
+/* .fullPhone img */ {
+    width: 100%;
+    height: 100%;
+    border-radius: 15%;
+}
+.buttonsImg.ms-2 img
+/* .fullPhone img */ {
+    background-color: #fff;
+}
+
+/* .fullPhone {
+    position: relative; /* Enable absolute positioning for child elements */
+/* } */
+
+.fullPhone img {
+    display: block;
+    width: 70%; /* Set the width of the img to 80% */
+    height: 40%; /* Set the height of the img to 60% of its original height */
+    z-index: 1; /* Set the z-index of the img to 1 */
+    margin-left: auto; /* Center the image horizontally */
+    margin-right: auto; /* Center the image horizontally */
+    object-fit: contain;
+    background-color: aquamarine;
+}
+
+.container.text-center {
+    margin-top: 10%; /* Adjust this value to position the h1 as desired */
+}
+
+.danger-img-container {
+    width: 4em;
+    height: 4em;
+}
+.danger-img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    margin: 5em 0;
+}
+.fw-normal {
+    font-size: 0.9em !important;
+}
+h1 {
+    font-size: 2.8em;
+    font-weight: bolder;
+}
+h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+h4 {
+    font-weight: bolder;
+    font-size: 2em;
+}
+
+i {
+    margin-left: 1em;
+}
+
+.list-group-item {
+    font-size: 0.92em;
+    text-align: right;
+    background-color: #fbaf1c;
+}
+
+.hero {
+    background-image: url("./assetes/images/Even_Darker_Hero_Image.jpeg"); /* Add your hero image */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    /* padding: 150px 0; */
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    /* padding-top: 5%; Adjust the top padding to position h1 */
+
+    height: 68vh;
+}
+
+@media (min-width: 1440px) {
+    .hero {
+        padding-bottom: 350px;
+    }
+    .buttons {
+        margin: auto;
+        width: 50%;
+    }
+}
+
+.iconImage img {
+    width: 3em;
+    height: 3em;
+    border-radius: 15%;
+    margin: 0 auto;
+    display: block;
+}
+
+.icon-container {
+    width: 3em;
+    height: 3em; /* Optionally set the height */
+    display: flex; /* Use Flexbox */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    margin: auto;
+}
+
+.icon-container img {
+    height: 100%;
+    width: 100%;
+}
+
+.mh-90 {
+    min-height: 85%;
+}
+.navbar {
+    background-color: #434343;
+    padding: 1.5em 0;
+}
+.navbar-brand {
+    /* font-family: "Roboto", sans-serif; */
+    font-size: 1.7rem;
+    color: #fff;
+}
+
+#notice {
+    background-color: #fbaf1c;
+}
+
+.text-center {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.col-md-4.col-sm-12 {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.sticky-buttons {
+    position: fixed;
+    bottom: 10%; /* 10% above the bottom */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Optional: Add some padding or margin */
+/* .sticky-buttons .btn {
+    margin: 5px;
+    padding: 10px;
+} */
+
+.whatsup {
+    background-color: #29b318;
+    color: #fff;
+}
+
+/* .whatsapp-button {
+    font-size: 1.2rem; 
+    /* padding: 10px 25px; 
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+/* }   */
+
+/* .whatsapp-button i {
+    margin-right: 10px;
+} */
+
+/* Hover effect to darken the button color slightly */
+/* .whatsapp-button:hover {
+    background-color: #20b85c;
+} */
