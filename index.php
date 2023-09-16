@@ -65,8 +65,10 @@ function old($fn){
                 // Send the email
                 if (mail($to, $subject, $message, $headers)) {
                     echo "Email sent successfully.";
+                    header('Location: index.php?status=success');
                 } else {
                     echo "Failed to send email.";
+                    header('Location: index.php?status=failed');
                 }
                 
 
@@ -77,7 +79,6 @@ function old($fn){
                     // 'Reply-To: sender@example.com' . "\r\n" .
                     // 'X-Mailer: PHP/' . phpversion();
                     // mail($to,$subject,$message,$headers);
-                    header('Location: index.php?status=success');
                 }else{
                     echo '<div class="alert alert-danger d-flex align-items-center" role="alert">
                     <i class="fas fa-exclamation-circle me-2"></i>
