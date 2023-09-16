@@ -1,8 +1,7 @@
 
 <?php
-
 function old($fn){
-    return $_REQUEST[$fn] ?? '';
+    return $_REQUEST[$fn] ? $_REQUEST[$fn]: '';
   }
 
     if(isset($_GET['status']) && $_GET['status'] == 'success'){
@@ -82,6 +81,9 @@ function old($fn){
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles-version6.css" />
     <link rel="icon" href="./assetes/images/dudi.jpg" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -123,49 +125,49 @@ function old($fn){
     <main class="mt-5">
         <section id="icons-list">
             <div class="row">
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-4 col-sm-12 mt-3">
                     <div class="icon-container">
                         <img src="./assetes/icons/icons8-electricity-100.png" alt="">
                     </div>
                     <p class="text-center">הקמת מערכות ותשתיות חשמל למבנים ובתי עסק</p>
                 </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-4 col-sm-12 mt-3">
                     <div class="icon-container">
                         <img src="./assetes/icons/icons8-conflict-100.png" alt="">
                     </div>
                     <p class="text-center">איתור ותיקון קצרים ותקלות חשמל</p>
                 </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-4 col-sm-12 mt-3">
                     <div class="icon-container">
                         <img src="./assetes/icons/icons8-powerline-100.png" alt="">
                     </div>
                     <p class="text-center">שדרוג והחלפת לוחות חשמל - הגדלת כוח לתלת פאזי</p>
                 </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-4 col-sm-12 mt-3">
                     <div class="icon-container">
                         <img src="./assetes/icons/icons8-water-heater-100.png" alt="">
                     </div>
                     <p class="text-center">תיקון קצרים בדודי חשמל והחלפת גופי חימום / חממים מהירים</p>
                 </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-4 col-sm-12 mt-3">
                     <div class="icon-container">
                         <img src="./assetes/icons/icons8-outlet-switch-100.png" alt="">
                     </div>
                     <p class="text-center">הוספת נקודות חשמל ותקשורת</p>
                 </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-4 col-sm-12 mt-3">
                     <div class="icon-container">
                         <img src="./assetes/icons/icons8-connected-100.png" alt="">
                     </div>
                     <p class="text-center">אחריות מובטחת על כל עבודה</p>
                 </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-4 col-sm-12 mt-3">
                     <div class="icon-container">
                         <img src="./assetes/icons/icons8-transmission-tower-100.png" alt="">
                     </div>
                     <p class="text-center">הכנה והעברת ביקורת של חברת חשמל ע"י חשמלאי מוסמך מומחה</p>
                 </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-4 col-sm-12 mt-3">
                     <div class="icon-container">
                         <img src="./assetes/icons/icons8-relay-home-automation-100.png" alt="">
                     </div>
@@ -193,19 +195,19 @@ function old($fn){
             <div class="col-8 col-md-4  mx-auto contact_form"">
                 <form action="" dir="rtl" method="POST" >
                    <div class="form-group my-3">
-            <!-- <label for="name">שם:</label> -->
-                      <input type="name" class="form-control" id="name"  name="name" placeholder="שם" value="<?=old('name');?>">
+            <label for="name">שם:</label>
+                      <input type="name" class="form-control" id="name"  name="name"   value="<?=old('name');?>">
                       <span class="text-danger"><?=$errors['name']?></span>
                  </div>
           <div class="form-group my-3">
-            <!-- <label for="phone">טלפון:</label> -->
-            <input type="phone" class="form-control" id="phone" name="phone" placeholder="טלפון" value="<?=old('phone');?>">
+            <label for="phone">טלפון:</label>
+            <input type="phone" class="form-control" id="phone" name="phone"   value="<?=old('phone');?>">
             <span class="text-danger"><?=$errors['phone']?></span>
         
         </div>
           <div class="form-group my-3">
-    <!-- <label for="job_description">תאור העבודה:</label> -->
-    <textarea class="form-control" id="job_description" rows="5" name="job_description" placeholder="תאור העבודה">
+    <label for="job_description">תאור העבודה:</label>
+    <textarea class="form-control" id="job_description" rows="5" name="job_description"  >
     <?=old('job_description');?>
     </textarea>
     <span class="text-danger"><?=$errors['job_description']?></span>
