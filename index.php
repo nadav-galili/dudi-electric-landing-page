@@ -44,13 +44,39 @@ function old($fn){
 
                 
                 if($valid_form){
-                    $to = "nadavg@mobile-brain.net";
-                    $subject = "הודעה מאתר דודי סעדי";
-                    $message = "שם: $name \nטלפון: $phone \nתיאור העבודה: $job_description";
-                    $headers = 'From: sender@example.com' . "\r\n" .
-                    'Reply-To: sender@example.com' . "\r\n" .
-                    'X-Mailer: PHP/' . phpversion();
-                    mail($to,$subject,$message,$headers);
+                   
+                // Set the mail server settings
+                ini_set("SMTP", "email-smtp.il-central-1.amazonaws.com"); // Replace with your SES SMTP endpoint
+                ini_set("smtp_port", "587"); // Port 587 for TLS
+                ini_set("sendmail_from", "nadavg1000@gmail.com"); // Replace with your verified SES email
+
+                // Additional headers
+                $headers = "From: nadavg1000@gmail.com\r\n"; // Replace with your verified SES email
+                $headers .= "Reply-To: nadavg1000@gmail.com\r\n"; // Replace with your verified SES email
+                $headers .= "Return-Path: nadavg1000@gmail.com\r\n"; // Replace with your verified SES email
+
+                // Recipient email address
+                $to = "rnadavg@mobile-brain.net"; // Replace with the recipient's email address
+
+                // Subject and message
+                $subject = "Test Email";
+                $message = "This is a test email sent from AWS SES via PHP's mail() function.";
+
+                // Send the email
+                if (mail($to, $subject, $message, $headers)) {
+                    echo "Email sent successfully.";
+                } else {
+                    echo "Failed to send email.";
+                }
+                
+
+                    // $to = "nadavg@mobile-brain.net";
+                    // $subject = "הודעה מאתר דודי סעדי";
+                    // $message = "שם: $name \nטלפון: $phone \nתיאור העבודה: $job_description";
+                    // $headers = 'From: sender@example.com' . "\r\n" .
+                    // 'Reply-To: sender@example.com' . "\r\n" .
+                    // 'X-Mailer: PHP/' . phpversion();
+                    // mail($to,$subject,$message,$headers);
                     header('Location: index.php?status=success');
                 }else{
                     echo '<div class="alert alert-danger d-flex align-items-center" role="alert">
@@ -125,7 +151,7 @@ function old($fn){
     <main class="mt-5">
         <section id="icons-list">
             <div class="row">
-                <div class="col-md-4 col-sm-12 mt-3">
+                <div class="col-md-4 col-sm-12 ">
                     <div class="icon-container">
                         <img src="./assetes/icons/icons8-electricity-100.png" alt="">
                     </div>
