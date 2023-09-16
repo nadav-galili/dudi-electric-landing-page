@@ -56,7 +56,7 @@ function old($fn){
                 $headers .= "Return-Path: nadavg1000@gmail.com\r\n"; // Replace with your verified SES email
 
                 // Recipient email address
-                $to = "rnadavg@mobile-brain.net"; // Replace with the recipient's email address
+                $to = "nadavg@mobile-brain.net"; // Replace with the recipient's email address
 
                 // Subject and message
                 $subject = "Test Email";
