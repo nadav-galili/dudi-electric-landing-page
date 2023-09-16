@@ -68,6 +68,13 @@ function old($fn){
                     header('Location: index.php?status=success');
                 } else {
                     echo "Failed to send email.";
+                    ///show error message
+                    
+                    //log error
+                            file_put_contents('log.txt',date('Y-m-d H:i:s'). ' - ' . $e->getMessage() . "\n",FILE_APPEND);
+
+
+
                     header('Location: index.php?status=failed');
                 }
                 
