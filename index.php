@@ -22,11 +22,11 @@ function old($fn){
                   'job_description'=>'',
                 ];
             if(isset($_POST['submit'])){
-                $name = filter_input(INPUT_POST,'name',FILTER_SANITIZE_STRING);
+                $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
                 $name = trim($name);
-                $phone = filter_input(INPUT_POST,'phone',FILTER_SANITIZE_STRING);
+                $phone =  filter_input(INPUT_POST,'phone',FILTER_SANITIZE_NUMBER_INT);
                 $phone = trim($phone);
-                $job_description = filter_input(INPUT_POST,'job_description',FILTER_SANITIZE_STRING);
+                $job_description = htmlspecialchars($_POST['job_description'], ENT_QUOTES, 'UTF-8');
                 $job_description = trim($job_description);
                 $valid_form = true;
                 if(!$name || mb_strlen($name) < 2){
