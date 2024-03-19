@@ -1,0 +1,46 @@
+:root {
+  --primary-color: #fbaf1c;
+}
+
+body {
+  background-color: #eeecec;
+  font-family: "Varela Round", sans-serif;
+}
+.container.text-center {
+  margin-top: 10%; /* Adjust this value to position the h1 as desired */
+}
+
+footer {
+  margin: 5em 0;
+}
+
+.iconImage img {
+  width: 3em;
+  height: 3em;
+  border-radius: 15%;
+  margin: 0 auto;
+  display: block;
+}
+
+.icon-container {
+  width: 3em;
+  height: 3em; /* Optionally set the height */
+  display: flex; /* Use Flexbox */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  margin: auto;
+}
+
+.icon-container img {
+  height: 100%;
+  width: 100%;
+}
+.navbar {
+  background-color: #434343;
+  padding: 1.5em 0;
+}
+.navbar-brand {
+  /* font-family: "Roboto", sans-serif; */
+  font-size: 1.7rem;
+  color: #fff;
+}
