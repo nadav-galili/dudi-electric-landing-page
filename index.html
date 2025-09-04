@@ -44,6 +44,28 @@
   </head>
 
   <body>
+    <!-- GDPR Consent Screen -->
+    <div id="cookieConsent" class="cookie-consent-overlay">
+      <div class="cookie-consent-modal">
+        <div class="cookie-consent-content">
+          <h3>הסכמה לשימוש בעוגיות</h3>
+          <p>
+            אתר זה משתמש בעוגיות כדי לשפר את חווית הגלישה שלך ולאסוף מידע סטטיסטי אנונימי על השימוש באתר.
+            השימוש בעוגיות עוזר לנו להבין כיצד המשתמשים מתקשרים עם האתר ולשפר את השירותים שלנו.
+          </p>
+          <p>
+            על ידי לחיצה על "אני מסכים/ה" אתה מאשר את השימוש בעוגיות באתר זה.
+            לפרטים נוספים, ראה את 
+            <a href="privacy-policy.html" target="_blank" class="privacy-link">מדיניות הפרטיות</a> שלנו.
+          </p>
+          <div class="cookie-consent-buttons">
+            <button id="acceptCookies" class="btn btn-primary">אני מסכים/ה</button>
+            <button id="rejectCookies" class="btn btn-secondary">דחה</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <nav class="navbar navbar-expand-lg navbar-dark justify-content-center">
       <a class="navbar-brand" href="#"> עבודות חשמל MS</a>
       <div class="iconImage me-3">
@@ -164,6 +186,8 @@
     <footer>
       <p class="text-center fw-normal">
         <a href="/accesability.html" class="text-secondary"> הצהרת נגישות </a>
+        |
+        <a href="privacy-policy.html" class="text-secondary"> מדיניות פרטיות </a>
       </p>
       <p id="year" class="text-center fw-normal">
         created by Nadav Galili 🧙🏼‍♂️ &copy

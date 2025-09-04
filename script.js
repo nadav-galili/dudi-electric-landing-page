@@ -41,3 +41,101 @@ document.addEventListener("scroll", function () {
 const year = new Date().getFullYear();
 let pElement = document.getElementById("year");
 pElement.innerHTML = pElement.innerHTML + " " + year;
+
+// Cookie Consent Logic
+document.addEventListener('DOMContentLoaded', function() {
+    const cookieConsentOverlay = document.getElementById('cookieConsent');
+    const acceptButton = document.getElementById('acceptCookies');
+    const rejectButton = document.getElementById('rejectCookies');
+    
+    // Check if user has already made a choice
+    const cookieConsent = getCookie('cookieConsent');
+    
+    if (cookieConsent === null) {
+        // Show consent screen if no previous choice
+        showConsentScreen();
+    } else {
+        // Hide consent screen if choice was made
+        hideConsentScreen();
+        
+        // Handle analytics based on previous choice
+        if (cookieConsent === 'accepted') {
+            enableAnalytics();
+        } else {
+            disableAnalytics();
+        }
+    }
+    
+    // Accept button click handler
+    acceptButton.addEventListener('click', function() {
+        setCookie('cookieConsent', 'accepted', 365);
+        hideConsentScreen();
+        enableAnalytics();
+    });
+    
+    // Reject button click handler
+    rejectButton.addEventListener('click', function() {
+        setCookie('cookieConsent', 'rejected', 365);
+        hideConsentScreen();
+        disableAnalytics();
+    });
+});
+
+// Cookie utility functions
+function setCookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+function showConsentScreen() {
+    const cookieConsentOverlay = document.getElementById('cookieConsent');
+    if (cookieConsentOverlay) {
+        cookieConsentOverlay.classList.remove('cookie-consent-hidden');
+        cookieConsentOverlay.style.display = 'flex';
+    }
+}
+
+function hideConsentScreen() {
+    const cookieConsentOverlay = document.getElementById('cookieConsent');
+    if (cookieConsentOverlay) {
+        cookieConsentOverlay.classList.add('cookie-consent-hidden');
+        cookieConsentOverlay.style.display = 'none';
+    }
+}
+
+function enableAnalytics() {
+    // Enable Google Analytics if consent is given
+    if (typeof gtag !== 'undefined') {
+        gtag('consent', 'update', {
+            'analytics_storage': 'granted'
+        });
+    }
+}
+
+function disableAnalytics() {
+    // Disable Google Analytics if consent is denied
+    if (typeof gtag !== 'undefined') {
+        gtag('consent', 'update', {
+            'analytics_storage': 'denied'
+        });
+    }
+    
+    // Clear existing Google Analytics cookies
+    const gaCookies = ['_ga', '_ga_GA_MEASUREMENT_ID', '_gid', '_gat'];
+    gaCookies.forEach(cookieName => {
+        document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`;
+    });
+}
